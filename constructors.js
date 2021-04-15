@@ -16,6 +16,12 @@
 
 // Code here
 
+function CarFactory(make, model){
+  this.make = make
+  this.model = model
+}
+
+
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -34,6 +40,7 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
+  const bob = new Employee('Bob', 'bob@gmail.com', '01-02-98')
   
   ////////// PROBLEM 3 //////////
   
@@ -57,6 +64,17 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
+
+  function Car(make, model, year){
+    this.make = make
+    this.model = model
+    this.year = year
+    this.move = 0
+    this.moveCar = function(){
+      this.move += 10
+      return this.move
+    }
+  }
   
   ////////// PROBLEM 4 //////////
   
@@ -76,6 +94,11 @@ function Employee(name, email, hireDate) {
   }
   
   // Code here
+Movie.prototype.changeRating = function(num){
+  return this.rating += num
+  
+}
+// = this.rating.Movie.call()
   
   ////////// PROBLEM 5 //////////
   
@@ -85,6 +108,18 @@ function Employee(name, email, hireDate) {
   
   // Code here
   
+function User(name, age, email, savedPosts){
+  this.name = name 
+  this.age = age 
+  this.email = email 
+  this.savedPosts = savedPosts
+}
+
+User.prototype.addSavedPost = function(id, title, rating){
+ 
+}
+
+
   ////////// PROBLEM 6 //////////
   
   // You will be using the constructor function you just created in problem 5.
