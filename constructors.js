@@ -95,7 +95,7 @@ function Employee(name, email, hireDate) {
   
   // Code here
 Movie.prototype.changeRating = function(num){
-  return this.rating += num
+  return (this.rating + num) % 2
   
 }
 // = this.rating.Movie.call()
@@ -113,28 +113,18 @@ Movie.prototype.changeRating = function(num){
   
   // Code here
 
-  let post1 = {
-    id: 0,
-    title: '',
-    rating: [1, 2, 3, 4, 5],
-  } 
   
 function User(name, age, email, savedPosts){
 
-  this.name = name 
-  this.age = age 
-  this.email = email 
-  this.savedPosts = [savedPosts]
-  console.log(savedPosts)
+  this.name = name, 
+  this.age = age,
+  this.email = email,
+  this.savedPosts = savedPosts
 }
 
 User.prototype.addSavedPost = function(id, title, rating){
- let newObj = {
-   id: id,
-   title: title,
-   rating: rating
- }
-this.savedPosts.push(newObj)
+
+this.savedPosts.push({id, title, rating})
 }
 
 
@@ -166,7 +156,7 @@ this.savedPosts.push(newObj)
    User.prototype.changePostRating = function(id, newRating){
      for (let i = 0; i < this.savedPosts.length; i++) {
        if (this.savedPosts[i].id === id){
-         this.savedPosts.rating = newRating;
+         this.savedPosts[i].rating = newRating
        }
      }
    }
